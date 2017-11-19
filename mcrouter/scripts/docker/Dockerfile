@@ -7,6 +7,7 @@ ENV             MCROUTER_REPO           https://github.com/facebook/mcrouter.git
 ENV             DEBIAN_FRONTEND         noninteractive
 
 RUN             apt-get update && apt-get install -y git && \
+                sudo apt-get install software-properties-common python-software-properties && \
                 mkdir -p $MCROUTER_DIR/repo && \
                 cd $MCROUTER_DIR/repo && git clone $MCROUTER_REPO && \
                 cd $MCROUTER_DIR/repo/mcrouter/mcrouter/scripts && \
